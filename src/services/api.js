@@ -1,17 +1,17 @@
 import axios from "axios";
 
-// Base configuration for API requests
+// Load environment variables
 const API = axios.create({
-  baseURL: "http://3.111.196.92:8020",
+  baseURL: process.env.REACT_APP_API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
 });
 
-// Authentication credentials
+// Authentication credentials from environment variables
 const auth = {
-  username: "trial",
-  password: "assignment123",
+  username: process.env.REACT_APP_API_USERNAME,
+  password: process.env.REACT_APP_API_PASSWORD,
 };
 
 // GET request
